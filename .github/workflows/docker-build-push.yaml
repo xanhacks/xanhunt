@@ -13,14 +13,14 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
-   - name: Login to DockerHub
+    - name: Login to DockerHub
       if: github.ref == 'refs/heads/master'
       uses: docker/login-action@v1
       with:
         username: ${{ env.DOCKER_USERNAME }}
         password: ${{ env.DOCKER_PASSWORD }}
 
-    - name: Build the docker image
+   - name: Build the docker image
       uses: docker/build-push-action@v2
       with:
         context: .
