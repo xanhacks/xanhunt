@@ -60,9 +60,46 @@ install_gowitness() {
     log "gowitness installed!"
 }
 
+install_gau() {
+    local tmp_dir="$(mktemp -d)"
+
+    log "Installing gau..."
+    wget -q "https://github.com/lc/gau/releases/download/v${GAU_VERSION}/gau_${GAU_VERSION}_linux_amd64.tar.gz" \
+        -O "${tmp_dir}/gau_linux_amd64.zip"
+    
+    (cd "${tmp_dir}" && tar xvf "${tmp_dir}/gau_linux_amd64.zip")
+    mv "${tmp_dir}/gau" "${BIN_DIR}/gau"
+    rm -rf "${tmp_dir}/"
+    log "gau installed!"
+}
+
+install_drupwn() {
+	(cd /opt && \
+		git clone https://github.com/immunIT/drupwn && \
+		cd drupwn && \
+		python3 setup.py install)
+}
+
+install_subfinder() {
+	local tool='subfinder'
+	local tmp_dir="$(mktemp -d)"
+
+    log "Installing ${tool}..."
+	wget -q "https://github.com/projectdiscovery/subfinder/releases/download/v${SUBFINDER_VERSION}/subfinder_${SUBFINDER_VERSION}_linux_amd64.zip" \
+        -O "${tmp_dir}/${tool}_linux_amd64.zip"
+
+    (cd "${tmp_dir}" && unzip -q "${tmp_dir}/${tool}_linux_amd64.zip")
+    mv "${tmp_dir}/${tool}" "${BIN_DIR}/${tool}"
+    rm -rf "${tmp_dir}"
+    log "${tool} installed!"
+}
+
 mkdir "$BIN_DIR"
 
 install_nuclei
 install_httpx
 install_amass
 install_gowitness
+install_gau
+install_drupwn
+install_subfinder
