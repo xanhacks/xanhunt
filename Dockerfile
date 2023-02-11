@@ -28,3 +28,4 @@ RUN bash /tmp/scripts/install.sh && \
 	rm -rf /tmp/scripts/
 
 COPY ./files/zshrc /root/.zshrc
+COPY ./files/zsh_history /root/.zsh_history
