@@ -20,7 +20,7 @@ jobs:
         username: ${{ env.DOCKER_USERNAME }}
         password: ${{ env.DOCKER_PASSWORD }}
 
-   - name: Build the docker image
+    - name: Build the docker image
       uses: docker/build-push-action@v2
       with:
         context: .
