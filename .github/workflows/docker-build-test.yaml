@@ -1,0 +1,17 @@
+name: Test to build the docker image
+
+on: [push]
+
+jobs:
+  build-and-test:
+    runs-on: debian-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Build Docker image
+      uses: docker/build-push-action@v2
+      with:
+        context: .
+        push: false

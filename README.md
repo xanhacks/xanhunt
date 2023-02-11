@@ -37,6 +37,9 @@ xanhunt
 - [ ] [projectdiscovery/subfinder](https://github.com/projectdiscovery/subfinder)
 - [ ] [projectdiscovery/notify](https://github.com/projectdiscovery/notify)
 - [ ] [projectdiscovery/asnmap](https://github.com/projectdiscovery/asnmap)
+- [ ] [projectdiscovery/katana](https://github.com/projectdiscovery/katana)
+
+> and some famous linux packages like: vim, neovim, jq, htop, ...
 
 ## Configuration
 
