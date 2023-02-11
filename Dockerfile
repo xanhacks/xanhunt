@@ -29,3 +29,5 @@ RUN bash /tmp/scripts/install.sh && \
 
 COPY ./files/zshrc /root/.zshrc
 COPY ./files/zsh_history /root/.zsh_history
+RUN mkdir -p /root/.config/nvim/
+COPY ./files/init.vim /root/.config/nvim/init.vim

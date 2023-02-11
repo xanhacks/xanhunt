@@ -46,6 +46,6 @@ xanhunt
 
 ## Configuration
 
-- [ ] zsh
+- [x] zsh
 - [ ] zsh history (in progress)
-- [ ] neovim
+- [x] neovim
