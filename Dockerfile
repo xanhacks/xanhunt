@@ -22,9 +22,9 @@ RUN apt-get update && \
 RUN gem install wpscan
 
 
-COPY ./scripts/install.sh /tmp/scripts/
+COPY ./scripts/ /tmp/scripts/
 RUN bash /tmp/scripts/install.sh && \
-	bash /tmp/scripts/configure.ssh && \
+	bash /tmp/scripts/configure.sh && \
 	rm -rf /tmp/scripts/
 
 COPY ./files/zshrc /root/.zshrc

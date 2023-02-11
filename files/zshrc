@@ -14,6 +14,6 @@ HYPHEN_INSENSITIVE="true"
 DISABLE_MAGIC_FUNCTIONS="true"
 
 # Which plugins would you like to load?
-plugins=(git)
+plugins=(git zsh-syntax-highlighting zsh-completions zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
