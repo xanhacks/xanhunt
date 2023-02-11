@@ -49,3 +49,4 @@ xanhunt
 - [x] zsh
 - [ ] zsh history (in progress)
 - [x] neovim
+

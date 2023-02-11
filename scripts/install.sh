@@ -136,7 +136,19 @@ install_notify() {
     log "${tool} installed!"
 }
 
+install_ffuf() {
+	local tool='ffuf'
+    local tmp_dir="$(mktemp -d)"
 
+    log "Installing ${tool}..."
+    wget -q "https://github.com/ffuf/ffuf/releases/download/v${FFUF_VERSION}/ffuf_${FFUF_VERSION}_linux_amd64.tar.gz" \
+        -O "${tmp_dir}/${tool}_linux_amd64.tar.gz"
+    
+    (cd "${tmp_dir}" && tar xvf "${tmp_dir}/${tool}_linux_amd64.tar.gz")
+    mv "${tmp_dir}/${tool}" "${BIN_DIR}/${tool}"
+    rm -rf "${tmp_dir}/"
+    log "${tool} installed!"
+}
 
 mkdir "$BIN_DIR"
 
@@ -150,3 +162,4 @@ install_subfinder
 install_asnmap
 install_katana
 install_notify
+install_ffuf
