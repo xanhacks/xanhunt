@@ -34,7 +34,7 @@ xanhunt
 - [x] [nmap/nmap](https://github.com/nmap/nmap)
 - [x] [projectdiscovery/httpx](https://github.com/projectdiscovery/httpx)
 - [x] [sensepost/gowitness](https://github.com/sensepost/gowitness)
-- [ ] [projectdiscovery/subfinder](https://github.com/projectdiscovery/subfinder)
+- [x] [projectdiscovery/subfinder](https://github.com/projectdiscovery/subfinder)
 - [ ] [projectdiscovery/notify](https://github.com/projectdiscovery/notify)
 - [ ] [projectdiscovery/asnmap](https://github.com/projectdiscovery/asnmap)
 - [ ] [projectdiscovery/katana](https://github.com/projectdiscovery/katana)

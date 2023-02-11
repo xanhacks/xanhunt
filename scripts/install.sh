@@ -94,6 +94,21 @@ install_subfinder() {
     log "${tool} installed!"
 }
 
+install_asnmap() {
+	local tool='asnmap'
+	local tmp_dir="$(mktemp -d)"
+
+    log "Installing ${tool}..."
+	wget -q "https://github.com/projectdiscovery/${tool}/releases/download/v${ASNMAP_VERSION}/${tool}_${ASNMAP_VERSION}_linux_amd64.zip" \
+        -O "${tmp_dir}/${tool}_linux_amd64.zip"
+
+    (cd "${tmp_dir}" && unzip -q "${tmp_dir}/${tool}_linux_amd64.zip")
+    mv "${tmp_dir}/${tool}" "${BIN_DIR}/${tool}"
+    rm -rf "${tmp_dir}"
+    log "${tool} installed!"
+}
+
+
 mkdir "$BIN_DIR"
 
 install_nuclei
@@ -103,3 +118,4 @@ install_gowitness
 install_gau
 install_drupwn
 install_subfinder
+install_asnmap
