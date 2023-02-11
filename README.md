@@ -39,7 +39,7 @@ xanhunt
 - [x] [projectdiscovery/asnmap](https://github.com/projectdiscovery/asnmap)
 - [x] [projectdiscovery/katana](https://github.com/projectdiscovery/katana)
 
-> and some famous linux packages like: vim, neovim, jq, htop, ...
+> and some famous linux packages like: **python, ruby, vim, neovim, jq, htop, ...**
 
 ## Configuration
 
