@@ -35,7 +35,7 @@ xanhunt
 - [x] [projectdiscovery/httpx](https://github.com/projectdiscovery/httpx)
 - [x] [sensepost/gowitness](https://github.com/sensepost/gowitness)
 - [x] [projectdiscovery/subfinder](https://github.com/projectdiscovery/subfinder)
-- [ ] [projectdiscovery/notify](https://github.com/projectdiscovery/notify)
+- [x] [projectdiscovery/notify](https://github.com/projectdiscovery/notify)
 - [x] [projectdiscovery/asnmap](https://github.com/projectdiscovery/asnmap)
 - [x] [projectdiscovery/katana](https://github.com/projectdiscovery/katana)
 
@@ -44,5 +44,5 @@ xanhunt
 ## Configuration
 
 - [ ] zsh
-- [ ] zsh history
+- [ ] zsh history (in progress)
 - [ ] neovim
