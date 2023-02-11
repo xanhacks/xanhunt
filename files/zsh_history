@@ -1,0 +1,7 @@
+subfinder -silent -d example.com
+httpx -silent -ip -wc -title -status-code -tech-detect -u https://example.com
+katana -silent -js-crawl -u https://example.com
+notify
+notify -silent
+notify -silent -bulk -data output.txt
+notify -silent -data output.txt

@@ -11,6 +11,7 @@ ENV GAU_VERSION="2.1.2"
 ENV SUBFINDER_VERSION="2.5.5"
 ENV ASNMAP_VERSION="1.0.0"
 ENV KATANA_VERSION="0.0.3"
+ENV NOTIFY_VERSION="1.0.4"
 
 
 RUN apt-get update && \
@@ -21,8 +22,10 @@ RUN apt-get update && \
 RUN gem install wpscan
 
 
-COPY ./scripts/install.sh /tmp/install.sh
+COPY ./scripts/ /tmp/scripts/
+RUN bash /tmp/scripts/install.sh && \
+	bash /tmp/scripts/configure.sh && \
+	rm -rf /tmp/scripts/
 
-RUN bash /tmp/install.sh && \ 
-	rm /tmp/install.sh
-
+COPY ./files/zshrc /root/.zshrc
+COPY ./files/zsh_history /root/.zsh_history

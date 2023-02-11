@@ -35,14 +35,17 @@ xanhunt
 - [x] [projectdiscovery/httpx](https://github.com/projectdiscovery/httpx)
 - [x] [sensepost/gowitness](https://github.com/sensepost/gowitness)
 - [x] [projectdiscovery/subfinder](https://github.com/projectdiscovery/subfinder)
-- [ ] [projectdiscovery/notify](https://github.com/projectdiscovery/notify)
+- [x] [projectdiscovery/notify](https://github.com/projectdiscovery/notify)
 - [x] [projectdiscovery/asnmap](https://github.com/projectdiscovery/asnmap)
 - [x] [projectdiscovery/katana](https://github.com/projectdiscovery/katana)
+- [ ] [tomnomnom/unfurl](https://github.com/tomnomnom/unfurl)
+- [ ] [ffuf/ffuf](https://github.com/ffuf/ffuf)
+- [ ] [tomnomnom/hacks/inscope](https://github.com/tomnomnom/hacks/tree/mater/inscope)
 
-> and some famous linux packages like: vim, neovim, jq, htop, ...
+> and some famous linux packages like: **python, ruby, vim, neovim, jq, htop, ...**
 
 ## Configuration
 
 - [ ] zsh
-- [ ] zsh history
+- [ ] zsh history (in progress)
 - [ ] neovim

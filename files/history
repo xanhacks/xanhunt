@@ -1,2 +1,0 @@
-subfinder -silent -d example.com
-httpx -silent -ip -wc -title -status-code -tech-detect -u https://example.com
