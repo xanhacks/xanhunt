@@ -108,6 +108,20 @@ install_asnmap() {
     log "${tool} installed!"
 }
 
+install_katana() {
+	local tool='katana'
+	local tmp_dir="$(mktemp -d)"
+
+    log "Installing ${tool}..."
+	wget -q "https://github.com/projectdiscovery/${tool}/releases/download/v${KATANA_VERSION}/${tool}_${KATANA_VERSION}_linux_amd64.zip" \
+        -O "${tmp_dir}/${tool}_linux_amd64.zip"
+
+    (cd "${tmp_dir}" && unzip -q "${tmp_dir}/${tool}_linux_amd64.zip")
+    mv "${tmp_dir}/${tool}" "${BIN_DIR}/${tool}"
+    rm -rf "${tmp_dir}"
+    log "${tool} installed!"
+}
+
 
 mkdir "$BIN_DIR"
 
@@ -119,3 +133,4 @@ install_gau
 install_drupwn
 install_subfinder
 install_asnmap
+install_katana

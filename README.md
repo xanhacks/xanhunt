@@ -36,8 +36,8 @@ xanhunt
 - [x] [sensepost/gowitness](https://github.com/sensepost/gowitness)
 - [x] [projectdiscovery/subfinder](https://github.com/projectdiscovery/subfinder)
 - [ ] [projectdiscovery/notify](https://github.com/projectdiscovery/notify)
-- [ ] [projectdiscovery/asnmap](https://github.com/projectdiscovery/asnmap)
-- [ ] [projectdiscovery/katana](https://github.com/projectdiscovery/katana)
+- [x] [projectdiscovery/asnmap](https://github.com/projectdiscovery/asnmap)
+- [x] [projectdiscovery/katana](https://github.com/projectdiscovery/katana)
 
 > and some famous linux packages like: vim, neovim, jq, htop, ...
 
