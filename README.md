@@ -1,6 +1,6 @@
 # xanhunt
 
-A lightweight debian-based docker image that contains all the tools you need to do bugbounty on web applications.
+A lightweight debian-based docker image that contains all the tools you need to do bugbounty.
 
 ## Getting started
 
