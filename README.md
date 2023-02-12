@@ -13,7 +13,7 @@ sudo docker pull xanhacks/xanhunt:latest
 Add the following alias to your shell profile:
 
 ```bash
-alias xanhunt='sudo docker run -it --rm -v "$HOME/.xanhunt/:/root/shared/" --hostname xanhunt xanhacks/xanhunt bash'
+alias xanhunt='sudo docker run -it --rm -v "$HOME/.xanhunt/:/root/shared/" --hostname xanhunt xanhacks/xanhunt zsh'
 ```
 
 Start `xanhunt`:
@@ -41,7 +41,7 @@ xanhunt
 - [x] [tomnomnom/unfurl](https://github.com/tomnomnom/unfurl)
 - [x] [ffuf/ffuf](https://github.com/ffuf/ffuf)
 - [ ] [tomnomnom/hacks/inscope](https://github.com/tomnomnom/hacks/tree/mater/inscope)
-- [ ] [OJ/gobuster/](https://github.com/OJ/gobuster/)
+- [x] [OJ/gobuster](https://github.com/OJ/gobuster/)
 
 > and some famous linux packages like: **python, ruby, vim, neovim, jq, htop, ...**
 

@@ -165,9 +165,9 @@ install_unfurl() {
 
     log "Installing ${tool}..."
     wget -q "https://github.com/tomnomnom/unfurl/releases/download/v${UNFURL_VERSION}/unfurl-linux-amd64-${UNFURL_VERSION}.tgz" \
-        -O "${tmp_dir}/${tool}_linux_amd64.tar.gz"
+        -O "${tmp_dir}/${tool}_linux_amd64.tgz"
     
-    (cd "${tmp_dir}" && tar xvf "${tmp_dir}/${tool}_linux_amd64.tar.gz")
+    (cd "${tmp_dir}" && tar xvf "${tmp_dir}/${tool}_linux_amd64.tgz")
     mv "${tmp_dir}/${tool}" "${BIN_DIR}/${tool}"
     rm -rf "${tmp_dir}/"
     log "${tool} installed!"
