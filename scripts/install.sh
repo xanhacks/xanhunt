@@ -59,8 +59,14 @@ install_gowitness() {
     log "Installing ${tool}..."
 	wget -q "https://github.com/sensepost/gowitness/releases/download/${GOWITNESS_VERSION}/gowitness-${GOWITNESS_VERSION}-linux-amd64" \
         -O "${BIN_DIR}/${tool}"
-
 	chmod +x "${BIN_DIR}/${tool}"
+
+	wget -q 'https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb' \
+		-O "${tmp_dir}/google-chrome_amd64.deb"
+	dpkg -i "${tmp_dir}/google-chrome_amd64.deb" 2>/dev/null
+	apt-get --fix-broken install -y
+	dpkg -i "${tmp_dir}/google-chrome_amd64.deb"
+    rm -rf "${tmp_dir}/"
     log "${tool} installed!"
 }
 

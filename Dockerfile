@@ -17,7 +17,7 @@ ENV UNFURL_VERSION="0.4.3"
 
 
 RUN apt-get update && \
-	apt-get install -y zip curl wget jq htop git make gcc \
+	apt-get install -y zip curl wget jq htop git make gcc procps \
 		vim neovim zsh ruby ruby-dev python3-setuptools python3-pip \
 		sqlmap nmap masscan gobuster
 
