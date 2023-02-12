@@ -13,12 +13,13 @@ ENV ASNMAP_VERSION="1.0.0"
 ENV KATANA_VERSION="0.0.3"
 ENV NOTIFY_VERSION="1.0.4"
 ENV FFUF_VERSION="2.0.0"
+ENV UNFURL_VERSION="0.4.3"
 
 
 RUN apt-get update && \
 	apt-get install -y zip curl wget jq htop git make gcc \
 		vim neovim zsh ruby ruby-dev python3-setuptools \
-		sqlmap nmap masscan
+		sqlmap nmap masscan gobuster
 
 RUN gem install wpscan
 
