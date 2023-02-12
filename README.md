@@ -24,24 +24,42 @@ xanhunt
 
 ## Tools
 
-- [x] [lc/gau](https://github.com/lc/gau)
+Recon (URLs and domains):
+
 - [x] [OWASP/Amass](https://github.com/OWASP/Amass)
-- [x] [projectdiscovery/nuclei](https://github.com/projectdiscovery/nuclei)
-- [x] [sqlmapproject/sqlmap](https://github.com/sqlmapproject/sqlmap)
-- [x] [wpscanteam/wpscan](https://github.com/wpscanteam/wpscan)
-- [x] [immunIT/drupwn](https://github.com/immunIT/drupwn)
+- [x] [OJ/gobuster](https://github.com/OJ/gobuster/)
+- [x] [lc/gau](https://github.com/lc/gau)
+- [x] [projectdiscovery/katana](https://github.com/projectdiscovery/katana)
+- [x] [projectdiscovery/subfinder](https://github.com/projectdiscovery/subfinder)
+
+Recon (infrastructure scanning):
+
 - [x] [robertdavidgraham/masscan](https://github.com/robertdavidgraham/masscan)
 - [x] [nmap/nmap](https://github.com/nmap/nmap)
+- [x] [projectdiscovery/asnmap](https://github.com/projectdiscovery/asnmap)
+
+Recon (tech detection):
+
 - [x] [projectdiscovery/httpx](https://github.com/projectdiscovery/httpx)
 - [x] [sensepost/gowitness](https://github.com/sensepost/gowitness)
-- [x] [projectdiscovery/subfinder](https://github.com/projectdiscovery/subfinder)
-- [x] [projectdiscovery/notify](https://github.com/projectdiscovery/notify)
-- [x] [projectdiscovery/asnmap](https://github.com/projectdiscovery/asnmap)
-- [x] [projectdiscovery/katana](https://github.com/projectdiscovery/katana)
-- [x] [tomnomnom/unfurl](https://github.com/tomnomnom/unfurl)
+
+Scanning:
+
+- [x] [projectdiscovery/nuclei](https://github.com/projectdiscovery/nuclei)
+- [x] [sqlmapproject/sqlmap](https://github.com/sqlmapproject/sqlmap)
+- [x] [immunIT/drupwn](https://github.com/immunIT/drupwn)
+- [x] [wpscanteam/wpscan](https://github.com/wpscanteam/wpscan)
+
+Fuzzing:
+
+- [x] [xmendez/wfuzz](https://github.com/xmendez/wfuzz)
 - [x] [ffuf/ffuf](https://github.com/ffuf/ffuf)
+
+Others (reporting, cleaning, ...):
+
+- [x] [projectdiscovery/notify](https://github.com/projectdiscovery/notify)
+- [x] [tomnomnom/unfurl](https://github.com/tomnomnom/unfurl)
 - [ ] [tomnomnom/hacks/inscope](https://github.com/tomnomnom/hacks/tree/mater/inscope)
-- [x] [OJ/gobuster](https://github.com/OJ/gobuster/)
 
 > and some famous linux packages like: **python, ruby, vim, neovim, jq, htop, ...**
 
