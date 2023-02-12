@@ -10,74 +10,83 @@ log() {
 }
 
 install_nuclei() {
+	local tool='nuclei'
     local tmp_dir="$(mktemp -d)"
 
-	log "Installing nuclei..."
+	log "Installing ${tool}..."
     wget -q "https://github.com/projectdiscovery/nuclei/releases/download/v${NUCLEI_VERSION}/nuclei_${NUCLEI_VERSION}_linux_amd64.zip" \
-        -O "${tmp_dir}/nuclei_linux_amd64.zip"
+        -O "${tmp_dir}/${tool}_linux_amd64.zip"
     
-    (cd "${tmp_dir}" && unzip -q "${tmp_dir}/nuclei_linux_amd64.zip")
-    mv "${tmp_dir}/nuclei" "${BIN_DIR}/nuclei"
+    (cd "${tmp_dir}" && unzip -q "${tmp_dir}/${tool}_linux_amd64.zip")
+    mv "${tmp_dir}/${tool}" "${BIN_DIR}/${tool}"
     "${BIN_DIR}/nuclei" # run it to download templates
     rm -rf "${tmp_dir}"
-	log "nuclei installed!"
+	log "${tool} installed!"
 }
 
 install_httpx() {
+	local tool='httpx'
     local tmp_dir="$(mktemp -d)"
 
-    log "Installing httpx..."
+    log "Installing ${tool}..."
     wget -q "https://github.com/projectdiscovery/httpx/releases/download/v${HTTPX_VERSION}/httpx_${HTTPX_VERSION}_linux_amd64.zip" \
-        -O "${tmp_dir}/httpx_linux_amd64.zip"
+        -O "${tmp_dir}/${tool}_linux_amd64.zip"
     
-    (cd "${tmp_dir}" && unzip -q "${tmp_dir}/httpx_linux_amd64.zip")
-    mv "${tmp_dir}/httpx" "${BIN_DIR}/httpx"
+    (cd "${tmp_dir}" && unzip -q "${tmp_dir}/${tool}_linux_amd64.zip")
+    mv "${tmp_dir}/${tool}" "${BIN_DIR}/${tool}"
     rm -rf "${tmp_dir}/"
-    log "httpx installed!"
+    log "${tool} installed!"
 }
 
 install_amass() {
+	local tool='amass'
     local tmp_dir="$(mktemp -d)"
 
-    log "Installing amass..."
-    wget -q 'https://github.com/OWASP/Amass/releases/latest/download/amass_linux_amd64.zip' \
-        -O "${tmp_dir}/amass_linux_amd64.zip"
+    log "Installing ${tool}..."
+    wget -q "https://github.com/OWASP/Amass/releases/latest/download/amass_linux_amd64.zip" \
+        -O "${tmp_dir}/${tool}_linux_amd64.zip"
 
-    (cd "${tmp_dir}" && unzip -q "${tmp_dir}/amass_linux_amd64.zip")
-    mv "${tmp_dir}/amass_linux_amd64/amass" "${BIN_DIR}/amass"
+    (cd "${tmp_dir}" && unzip -q "${tmp_dir}/${tool}_linux_amd64.zip")
+    mv "${tmp_dir}/${tool}_linux_amd64/${tool}" "${BIN_DIR}/${tool}"
     rm -rf "${tmp_dir}/"
-    log "amass installed!"
+    log "${tool} installed!"
 }
 
 install_gowitness() {
+	local tool='gowitness'
     local tmp_dir="$(mktemp -d)"
 
-    log "Installing gowitness..."
+    log "Installing ${tool}..."
 	wget -q "https://github.com/sensepost/gowitness/releases/download/${GOWITNESS_VERSION}/gowitness-${GOWITNESS_VERSION}-linux-amd64" \
-        -O "${BIN_DIR}/gowitness"
+        -O "${BIN_DIR}/${tool}"
 
-	chmod +x "${BIN_DIR}/gowitness"
-    log "gowitness installed!"
+	chmod +x "${BIN_DIR}/${tool}"
+    log "${tool} installed!"
 }
 
 install_gau() {
+	local tool='gau'
     local tmp_dir="$(mktemp -d)"
 
-    log "Installing gau..."
+    log "Installing ${tool}..."
     wget -q "https://github.com/lc/gau/releases/download/v${GAU_VERSION}/gau_${GAU_VERSION}_linux_amd64.tar.gz" \
-        -O "${tmp_dir}/gau_linux_amd64.zip"
+        -O "${tmp_dir}/${tool}_linux_amd64.tar.gz"
     
-    (cd "${tmp_dir}" && tar xvf "${tmp_dir}/gau_linux_amd64.zip")
-    mv "${tmp_dir}/gau" "${BIN_DIR}/gau"
+    (cd "${tmp_dir}" && tar xvf "${tmp_dir}/${tool}_linux_amd64.tar.gz")
+    mv "${tmp_dir}/${tool}" "${BIN_DIR}/${tool}"
     rm -rf "${tmp_dir}/"
-    log "gau installed!"
+    log "${tool} installed!"
 }
 
 install_drupwn() {
+	local tool='drupwn'
+
+    log "Installing ${tool}..."
 	(cd /opt && \
 		git clone https://github.com/immunIT/drupwn && \
 		cd drupwn && \
 		python3 setup.py install)
+    log "${tool} installed!"
 }
 
 install_subfinder() {
@@ -99,7 +108,7 @@ install_asnmap() {
 	local tmp_dir="$(mktemp -d)"
 
     log "Installing ${tool}..."
-	wget -q "https://github.com/projectdiscovery/${tool}/releases/download/v${ASNMAP_VERSION}/${tool}_${ASNMAP_VERSION}_linux_amd64.zip" \
+	wget -q "https://github.com/projectdiscovery/asnmap/releases/download/v${ASNMAP_VERSION}/asnmap_${ASNMAP_VERSION}_linux_amd64.zip" \
         -O "${tmp_dir}/${tool}_linux_amd64.zip"
 
     (cd "${tmp_dir}" && unzip -q "${tmp_dir}/${tool}_linux_amd64.zip")
@@ -113,7 +122,7 @@ install_katana() {
 	local tmp_dir="$(mktemp -d)"
 
     log "Installing ${tool}..."
-	wget -q "https://github.com/projectdiscovery/${tool}/releases/download/v${KATANA_VERSION}/${tool}_${KATANA_VERSION}_linux_amd64.zip" \
+	wget -q "https://github.com/projectdiscovery/katana/releases/download/v${KATANA_VERSION}/katana_${KATANA_VERSION}_linux_amd64.zip" \
         -O "${tmp_dir}/${tool}_linux_amd64.zip"
 
     (cd "${tmp_dir}" && unzip -q "${tmp_dir}/${tool}_linux_amd64.zip")
@@ -127,12 +136,40 @@ install_notify() {
 	local tmp_dir="$(mktemp -d)"
 
     log "Installing ${tool}..."
-	wget -q "https://github.com/projectdiscovery/${tool}/releases/download/v${NOTIFY_VERSION}/${tool}_${NOTIFY_VERSION}_linux_amd64.zip" \
+	wget -q "https://github.com/projectdiscovery/notify/releases/download/v${NOTIFY_VERSION}/notify_${NOTIFY_VERSION}_linux_amd64.zip" \
         -O "${tmp_dir}/${tool}_linux_amd64.zip"
 
     (cd "${tmp_dir}" && unzip -q "${tmp_dir}/${tool}_linux_amd64.zip")
     mv "${tmp_dir}/${tool}" "${BIN_DIR}/${tool}"
     rm -rf "${tmp_dir}"
+    log "${tool} installed!"
+}
+
+install_ffuf() {
+	local tool='ffuf'
+    local tmp_dir="$(mktemp -d)"
+
+    log "Installing ${tool}..."
+    wget -q "https://github.com/ffuf/ffuf/releases/download/v${FFUF_VERSION}/ffuf_${FFUF_VERSION}_linux_amd64.tar.gz" \
+        -O "${tmp_dir}/${tool}_linux_amd64.tar.gz"
+    
+    (cd "${tmp_dir}" && tar xvf "${tmp_dir}/${tool}_linux_amd64.tar.gz")
+    mv "${tmp_dir}/${tool}" "${BIN_DIR}/${tool}"
+    rm -rf "${tmp_dir}/"
+    log "${tool} installed!"
+}
+
+install_unfurl() {
+	local tool='unfurl'
+    local tmp_dir="$(mktemp -d)"
+
+    log "Installing ${tool}..."
+    wget -q "https://github.com/tomnomnom/unfurl/releases/download/v${UNFURL_VERSION}/unfurl-linux-amd64-${UNFURL_VERSION}.tgz" \
+        -O "${tmp_dir}/${tool}_linux_amd64.tar.gz"
+    
+    (cd "${tmp_dir}" && tar xvf "${tmp_dir}/${tool}_linux_amd64.tar.gz")
+    mv "${tmp_dir}/${tool}" "${BIN_DIR}/${tool}"
+    rm -rf "${tmp_dir}/"
     log "${tool} installed!"
 }
 
@@ -150,3 +187,5 @@ install_subfinder
 install_asnmap
 install_katana
 install_notify
+install_ffuf
+install_unfurl

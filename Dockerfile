@@ -12,6 +12,7 @@ ENV SUBFINDER_VERSION="2.5.5"
 ENV ASNMAP_VERSION="1.0.0"
 ENV KATANA_VERSION="0.0.3"
 ENV NOTIFY_VERSION="1.0.4"
+ENV FFUF_VERSION="2.0.0"
 
 
 RUN apt-get update && \
@@ -29,3 +30,5 @@ RUN bash /tmp/scripts/install.sh && \
 
 COPY ./files/zshrc /root/.zshrc
 COPY ./files/zsh_history /root/.zsh_history
+RUN mkdir -p /root/.config/nvim/
+COPY ./files/init.vim /root/.config/nvim/init.vim
