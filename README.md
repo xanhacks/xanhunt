@@ -38,9 +38,10 @@ xanhunt
 - [x] [projectdiscovery/notify](https://github.com/projectdiscovery/notify)
 - [x] [projectdiscovery/asnmap](https://github.com/projectdiscovery/asnmap)
 - [x] [projectdiscovery/katana](https://github.com/projectdiscovery/katana)
-- [ ] [tomnomnom/unfurl](https://github.com/tomnomnom/unfurl)
-- [ ] [ffuf/ffuf](https://github.com/ffuf/ffuf)
+- [x] [tomnomnom/unfurl](https://github.com/tomnomnom/unfurl)
+- [x] [ffuf/ffuf](https://github.com/ffuf/ffuf)
 - [ ] [tomnomnom/hacks/inscope](https://github.com/tomnomnom/hacks/tree/mater/inscope)
+- [ ] [OJ/gobuster/](https://github.com/OJ/gobuster/)
 
 > and some famous linux packages like: **python, ruby, vim, neovim, jq, htop, ...**
 
