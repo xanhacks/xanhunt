@@ -4,7 +4,7 @@ A lightweight debian-based docker image that contains all the tools you need to 
 
 ## Getting started
 
-Pull the latest docker image:
+Pull the latest docker image from [DockerHub](https://hub.docker.com/r/xanhacks/xanhunt):
 
 ```bash
 sudo docker pull xanhacks/xanhunt:latest
