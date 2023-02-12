@@ -18,10 +18,11 @@ ENV UNFURL_VERSION="0.4.3"
 
 RUN apt-get update && \
 	apt-get install -y zip curl wget jq htop git make gcc \
-		vim neovim zsh ruby ruby-dev python3-setuptools \
+		vim neovim zsh ruby ruby-dev python3-setuptools python3-pip \
 		sqlmap nmap masscan gobuster
 
-RUN gem install wpscan
+RUN gem install wpscan && \
+	python3 -m pip install wfuzz
 
 
 COPY ./scripts/ /tmp/scripts/
