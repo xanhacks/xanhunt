@@ -4,22 +4,51 @@ A lightweight debian-based docker image that contains all the tools you need to 
 
 ## Getting started
 
+Add the following functions to your shell profile (supports `bash` and `zsh`):
+
+```bash
+function xanhunt() {
+	XANHUNT_INSTANCE=$(sudo docker container ls --all --filter=ancestor='xanhacks/xanhunt' --format "{{.ID}}")
+	if [[ -z "$XANHUNT_INSTANCE" ]]; then
+		    XANHUNT_INSTANCE=$(sudo docker run -d -it --rm -v "$HOME/.xanhunt/:/root/shared/" --hostname xanhunt xanhacks/xanhunt zsh)
+	fi
+
+	sudo docker exec -it "$XANHUNT_INSTANCE" zsh
+}
+
+function xanhunt-exit() {
+	XANHUNT_INSTANCE=$(sudo docker container ls --all --filter=ancestor='xanhacks/xanhunt' --format "{{.ID}}")
+	if [[ -n "$XANHUNT_INSTANCE" ]]; then
+		    sudo docker stop "$XANHUNT_INSTANCE"
+	fi
+}
+
+function xanhunt-update() {
+	sudo docker pull 'xanhacks/xanhunt:latest'
+}
+```
+
 Pull the latest docker image from [DockerHub](https://hub.docker.com/r/xanhacks/xanhunt):
 
 ```bash
-sudo docker pull xanhacks/xanhunt:latest
+$ xanhunt-update
 ```
 
-Add the following alias to your shell profile:
+Start, attach or exit a `xanhunt` instance:
 
 ```bash
-alias xanhunt='sudo docker run -it --rm -v "$HOME/.xanhunt/:/root/shared/" --hostname xanhunt xanhacks/xanhunt zsh'
-```
+# start a new xanhunt instance
+$ xanhunt
+➜  ~ id
+uid=0(root) gid=0(root) groups=0(root)
 
-Start `xanhunt`:
+# attach to the currently running xanhunt instance
+$ xanhunt
+➜  ~ 
 
-```bash
-xanhunt
+# exit the xanhunt instance
+$ xanhunt-exit
+532417ce0056
 ```
 
 ## Tools
