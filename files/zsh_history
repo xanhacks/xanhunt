@@ -2,8 +2,11 @@ amass enum -ip -d example.com
 amass enum -ip -o amass.out -d example.com
 amass enum -ip -df domains.txt
 amass enum -ip -o amass.out -df domains.txt
-masscan --banners --max-rate 100000 -oL masscan.out 10.0.0.0/8 -p443
+masscan --banners --max-rate 100000 -oL masscan.out 10.0.0.0/8 -p80,443
 subfinder -silent -d example.com
+nuclei -silent -l domains.txt
+nuclei -silent -u 'https://example.com'
+nuclei -silent -l domains.txt -o nuclei.out
 httpx -silent -ip -wc -title -status-code -tech-detect -u https://example.com
 katana -silent -js-crawl -u https://example.com
 notify
@@ -12,3 +15,4 @@ notify -silent -bulk -data output.txt
 notify -silent -data output.txt
 cat urls.txt | gowitness file -f -
 gowitness file -f urls.txt
+wpscan --url 'https://example.com' -o wpscan.ou
