@@ -1,13 +1,15 @@
-amass enum -ip -d example.com
-amass enum -ip -o amass.out -d example.com
-amass enum -ip -df domains.txt
-amass enum -ip -o amass.out -df domains.txt
+cd shared
+amass enum -d example.com
+amass enum -o amass.out -d example.com
+amass enum -df domains.txt
+amass enum -o amass.out -df domains.txt
 masscan --banners --max-rate 100000 -oL masscan.out 10.0.0.0/8 -p80,443
 subfinder -silent -d example.com
 nuclei -silent -l domains.txt
 nuclei -silent -u 'https://example.com'
 nuclei -silent -l domains.txt -o nuclei.out
-httpx -silent -ip -wc -title -status-code -tech-detect -u https://example.com
+httpx -silent -ip -wc -title -status-code -tech-detect -u https://example.com -o httpx.out
+httpx -silent -ip -wc -title -status-code -tech-detect -l domains.txt -o httpx.out
 katana -silent -js-crawl -u https://example.com
 notify
 notify -silent
@@ -15,4 +17,5 @@ notify -silent -bulk -data output.txt
 notify -silent -data output.txt
 cat urls.txt | gowitness file -f -
 gowitness file -f urls.txt
-wpscan --url 'https://example.com' -o wpscan.ou
+wpscan --url 'https://example.com' -o wpscan.out
+ffuf -c -u 'https://example.com/FUZZ' -t 10 -x php -w ~/wordlists/raft-medium-words-lowercase.txt
