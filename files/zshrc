@@ -17,3 +17,4 @@ DISABLE_MAGIC_FUNCTIONS="true"
 plugins=(git zsh-syntax-highlighting zsh-completions zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
+unalias gau
