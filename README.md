@@ -34,7 +34,7 @@ Pull the latest docker image from [DockerHub](https://hub.docker.com/r/xanhacks/
 $ xanhunt-update
 ```
 
-Start, attach or exit a `xanhunt` instance:
+Start or attach to the existing `xanhunt` instance:
 
 ```bash
 # start a new xanhunt instance
@@ -45,8 +45,11 @@ uid=0(root) gid=0(root) groups=0(root)
 # attach to the currently running xanhunt instance
 $ xanhunt
 ➜  ~ 
+```
 
-# exit the xanhunt instance
+Exit the `xanhunt` instance: 
+
+```
 $ xanhunt-exit
 532417ce0056
 ```
@@ -97,4 +100,4 @@ Others (reporting, cleaning, ...):
 - [x] [ohmyzsh](https://github.com/ohmyzsh/ohmyzsh)
 - [ ] zsh history (in progress)
 - [x] [neovim](https://github.com/neovim/neovim)
-- [x] [raft](https://github.com/Averroes/raft/) wordlists
+- [x] [raft wordlists](https://github.com/Averroes/raft/)
