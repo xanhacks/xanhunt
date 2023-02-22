@@ -94,7 +94,7 @@ Others (reporting, cleaning, ...):
 
 ## Configuration
 
-- [x] zsh
+- [x] [ohmyzsh](https://github.com/ohmyzsh/ohmyzsh)
 - [ ] zsh history (in progress)
-- [x] neovim
-
+- [x] [neovim](https://github.com/neovim/neovim)
+- [x] [raft](https://github.com/Averroes/raft/) wordlists
