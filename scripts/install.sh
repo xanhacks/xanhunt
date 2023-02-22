@@ -1,13 +1,6 @@
 #!/bin/bash
+source ./utils.sh
 
-
-BIN_DIR="/root/bin"
-
-
-log() {
-    printf '[%(%d/%m/%Y %H:%M:%S)T]' # date format
-    echo " ${1}"
-}
 
 install_nuclei() {
 	local tool='nuclei'
@@ -180,7 +173,7 @@ install_unfurl() {
 }
 
 
-
+BIN_DIR="/root/bin"
 mkdir "$BIN_DIR"
 
 install_nuclei
