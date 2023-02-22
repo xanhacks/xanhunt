@@ -26,8 +26,9 @@ RUN gem install wpscan && \
 
 
 COPY ./scripts/ /tmp/scripts/
-RUN bash /tmp/scripts/install.sh && \
-	bash /tmp/scripts/configure.sh && \
+RUN cd /tmp/scripts && \
+	bash install.sh && \
+	bash configure.sh && \
 	rm -rf /tmp/scripts/
 
 COPY ./files/zshrc /root/.zshrc
