@@ -19,3 +19,5 @@ cat urls.txt | gowitness file -f -
 gowitness file -f urls.txt
 wpscan --url 'https://example.com' -o wpscan.out
 ffuf -c -u 'https://example.com/FUZZ' -t 10 -x php -w ~/wordlists/raft-medium-words-lowercase.txt
+feroxbuster -k -a 'Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/110.0' -t 10 -C 404 -w ~/wordlists/raft-large.txt -u 'https://example.com' -o feroxbuster.out
+cat domains.txt | feroxbuster --stdin -k -a 'Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/110.0' -t 10 -C 404 -w ~/wordlists/raft-large.txt -o feroxbuster.out

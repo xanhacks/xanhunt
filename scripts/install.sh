@@ -172,6 +172,15 @@ install_unfurl() {
     log "${tool} installed!"
 }
 
+install_feroxbuster() {
+	local tool='feroxbuster'
+
+    log "Installing ${tool}..."
+	curl -sL https://raw.githubusercontent.com/epi052/feroxbuster/master/install-nix.sh | bash
+	mv "$tool" "./bin/${tool}"
+    log "${tool} installed!"
+}
+
 
 BIN_DIR="/root/bin"
 mkdir "$BIN_DIR"
@@ -188,3 +197,4 @@ install_katana
 install_notify
 install_ffuf
 install_unfurl
+install_feroxbuster
