@@ -177,7 +177,7 @@ install_feroxbuster() {
 
     log "Installing ${tool}..."
 	curl -sL https://raw.githubusercontent.com/epi052/feroxbuster/master/install-nix.sh | bash
-	mv "$tool" "./bin/${tool}"
+	mv "$tool" "${BIN_DIR}/${tool}"
     log "${tool} installed!"
 }
 
