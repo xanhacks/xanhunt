@@ -21,8 +21,19 @@ install_raft_wordlists() {
 	(cd "${tmp_dir}" && unzip -q 'raft-master.zip')
 	mv "${tmp_dir}/raft-master/data/wordlists/" "${HOME}/wordlists/"
 	rm -rf "${tmp_dir}"
+	(cd "${HOME}/wordlists/" && cat raft-large-*.txt | sort | uniq > raft-large.txt)
 	log 'raft wordlists installed!'
+}
+
+configure_tools() {
+	mv /tmp/files/zshrc /root/.zshrc
+	mv /tmp/files/zsh_history /root/.zsh_history
+
+	mkdir -p /root/.config/{nvim,nuclei}
+	mv /tmp/files/init.vim /root/.config/nvim/init.vim
+	mv /tmp/files/nuclei_config.yaml /root/.config/nuclei/config.yaml
 }
 
 install_ohmyzsh
 install_raft_wordlists
+configure_tools
