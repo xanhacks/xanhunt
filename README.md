@@ -61,6 +61,7 @@ Recon (URLs and domains):
 - [x] [OWASP/Amass](https://github.com/OWASP/Amass)
 - [x] [OJ/gobuster](https://github.com/OJ/gobuster/)
 - [x] [lc/gau](https://github.com/lc/gau)
+- [x] [epi052/feroxbuster](https://github.com/epi052/feroxbuster)
 - [x] [projectdiscovery/katana](https://github.com/projectdiscovery/katana)
 - [x] [projectdiscovery/subfinder](https://github.com/projectdiscovery/subfinder)
 
