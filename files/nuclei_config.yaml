@@ -4,6 +4,7 @@ header:
 exclude-tags: ssl
 exclude-templates:
   - misconfiguration/http-missing-security-headers.yaml 
+  - misconfiguration/xss-deprecated-header.yaml
   - dns/dmarc-detect.yaml
   - dns/nameserver-fingerprint.yaml
 
